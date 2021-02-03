@@ -1,7 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+t<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
 <meta charset="UTF-8">
 <title> 고객 목록 </title>
@@ -22,17 +23,12 @@
   </tr>
  </thead>
  
- <tbody>
-	  <c:forEach items="${list}" var="list">
-	 <tr>
-	  <td>${list.cli_num}</td>
-	  <td>${list.cli_id}</td>
-	  <td>${list.name}</td>
-	  <td>${list.gender}</td>
-	  <td>${list.phone_num}</td>
-	  <td>${list.reg_date}</td>
-	 </tr>
-	</c:forEach>
- </tbody>
+
 </table>
+<script>
+$.getJSON(``, d=>{
+	
+	
+})
+</script>
 </html>

@@ -2,12 +2,21 @@ package com.tplus.gwland.uss.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import javax.inject.Inject;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 
 import com.tplus.gwland.uss.service.Client;
+import com.tplus.gwland.uss.service.ClientMapper;
 
-
-@Repository
-public interface ClientService {
-	public List<Client> list() throws Exception;
+@Service
+public class ClientService  {
+	@Autowired ClientMapper mapper;
+	public int list;
+ 
+ public List<Client> list() throws Exception {
+  return mapper.list();
+   }
 }

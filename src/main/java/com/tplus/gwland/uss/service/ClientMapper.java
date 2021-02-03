@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 import com.tplus.gwland.uss.service.Client;
 
 
-@Repository
+//@Repository
 public interface ClientMapper {
 	public List<Client> list() throws Exception;
+	
 }

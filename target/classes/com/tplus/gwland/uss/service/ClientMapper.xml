@@ -3,13 +3,12 @@
 	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	 
-<mapper namespace="com.tplus.gwland.uss.service.mapper">
+<mapper namespace="com.tplus.gwland.uss.service.ClientMapper">
 
 	
 	<!-- 고객목록 -->
 	<select id="list" resultType="com.tplus.gwland.uss.service.Client">
-	 select
-	  cli_num, cli_id, name, gender, phone_num, reg_date
-	 from Client.Client
+	 select cli_num cliNum, cli_id cliId, name, gender, phone_num phoneNum, reg_date regDate
+	 from Client
 	</select>
 </mapper>

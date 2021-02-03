@@ -2,14 +2,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
 	<title>Home</title>
 </head>
 <body>
-<h1> 홈페이지 입니다. </h1>
+<h1> 홈페이지 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
-<P><a href='client/list'>고객정보 보기</a></P>
+<P><a href='#' id="client-list">고객정보 보기</a></P>
+<script>
+$(`#client-list`).click(function(){
+   alert(`클릭`)
+   location.href=`move/client/list`})
+</script>
 </body>
 </html>
 
