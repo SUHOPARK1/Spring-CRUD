@@ -13,10 +13,9 @@ import com.tplus.gwland.uss.service.ClientMapper;
 
 @Service
 public class ClientService  {
-	@Autowired ClientMapper mapper;
-	public int list;
- 
- public List<Client> list() throws Exception {
-  return mapper.list();
+	 @Autowired ClientMapper mapper;
+	 public int list;
+	 public List<Client> list(){
+	  return mapper.list();
    }
 }

@@ -10,10 +10,16 @@
 <h1> 홈페이지 </h1>
 
 <P><a href='#' id="client-list">고객정보 보기</a></P>
+<P><a href='#' id="client-insert">고객정보 입력</a></P>
 <script>
 $(`#client-list`).click(function(){
    alert(`클릭`)
    location.href=`move/client/list`})
+</script>
+<script>
+$(`#client-insert`).click(function(){
+   alert(`클릭`)
+   location.href=`move/client/insert`})
 </script>
 </body>
 </html>

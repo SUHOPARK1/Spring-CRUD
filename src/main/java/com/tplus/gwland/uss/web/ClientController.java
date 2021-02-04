@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,15 +26,27 @@ public class ClientController {
 	 private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	    @Autowired
 	    ClientService clientService;
+	    @Autowired ClientMapper clientMapper;
+	    @PostMapping("/insert")
+	    public Map<?,?> insert(@RequestBody Client c){
+	    	var map = new HashMap<>();
+	    	System.out.println("고객데이터 입력");
+	    	map.put("message", (clientMapper.insert(c) == 1) ? "SUCCESS":"FAILURE");
+	    	return map;
+	    }
 	    
 	    @GetMapping("/list")
 	    public Map<?, ?> list(){
 	    	var map = new HashMap<>();
+	    	map.put("list", clientService.list());
 	    	map.put("message", (clientService.list == 1) ? "SUCCESS":"FAILURE");
-	        logger.info("======= 학생 목록 조회 ======= ");
+	        System.out.print(clientService.list());
 	        return map;
 	    }
-	 }
+	    
+	    
+
+}
 
 
 
