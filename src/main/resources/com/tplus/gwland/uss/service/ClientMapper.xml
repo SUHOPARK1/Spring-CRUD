@@ -12,7 +12,13 @@
 	
 	<!-- 고객목록 -->
 	<select id="list" resultType="com.tplus.gwland.uss.service.Client">
-	 select cli_num cliNum, cli_id cliId, name, gender, phone_num phoneNum, reg_date regDate
-	 from Client
+		 select cli_num cliNum, cli_id cliId, name, gender, phone_num phoneNum, reg_date regDate
+			 from Client
 	</select>
+	
+	
+	<delete id="remove" parameterType="com.tplus.gwland.uss.service.Client" >
+		delete from Client
+		where cli_num like #{cliNum}
+	</delete>
 </mapper>

@@ -6,9 +6,10 @@
 <head>
 <script src="/demo/resources/list.js"></script>
 <meta charset="UTF-8">
-<title> 고객 목록 </title>
+
 </head>
 <body>
+<h2>고객 목록 </h2>
 <table id="client-list">
  <thead>
   <tr>
@@ -25,6 +26,20 @@
 <script>
 	client.list()
 </script>
+ <tfoot>
+    <tr>
+      <th></th>
+      <td>
+        <a class="btn btn-info" href="/articles/edit/{{id}}">수정</a>
+        <button class="btn btn-danger" id="article-destroy-btn">삭제</button> <!-- 삭제 버튼 추가 -->
+      </td>
+    </tr>
+  </tfoot>
+
+
+ <p>
+<input type="button" value="홈으로" onclick="history.back(-1)">
+</p>
 </body>
 </html>
 

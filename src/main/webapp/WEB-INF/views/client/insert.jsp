@@ -43,7 +43,7 @@
    </td>
   </tr>
   <tr>
-   <th>생년월일</th>
+   <th>생년월일<br>('-'는 생략)</th>
    <td>
     <input type ="text" id="regDate" name="regDate" maxlength=50 value=""/>
    </td>
@@ -53,12 +53,13 @@
 <p>
  <input type="submit" id="insert-btn" value="입력"/>
  <input type="button" value="취소" onclick="history.back(-1)">
+ <input type="button" value="홈으로" onclick="history.back(-1)">
 </p>
+
 </form>
 
 <script>
 $('#insert-btn').click(function(e){
-	alert("클릭")
 	e.preventDefault()
 	$.ajax({
 		url:'/demo/client/insert',
@@ -82,7 +83,7 @@ $('#insert-btn').click(function(e){
 			}
 		},
 		error: function(e){
-			alert("에러입니다.")
+			alert("다시 입력해주세요.")
 		}
 	})
 })

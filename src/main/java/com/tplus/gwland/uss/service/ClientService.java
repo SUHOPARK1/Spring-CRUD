@@ -15,7 +15,14 @@ import com.tplus.gwland.uss.service.ClientMapper;
 public class ClientService  {
 	 @Autowired ClientMapper mapper;
 	 public int list;
+	 
 	 public List<Client> list(){
 	  return mapper.list();
    }
+	public void remove(Client c) {
+		
+	}
+	public int delete(Client c) {
+		return mapper.delete(c);
+	}
 }

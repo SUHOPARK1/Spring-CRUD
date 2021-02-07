@@ -11,4 +11,6 @@ import com.tplus.gwland.uss.service.Client;
 public interface ClientMapper {
 	public int insert(Client c);
 	public List<Client> list();
+	public void remove(Client c);
+	public int delete(Client c);
 }
