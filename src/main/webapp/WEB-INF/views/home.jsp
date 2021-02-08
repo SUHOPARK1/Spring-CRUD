@@ -10,6 +10,7 @@
 <h1> 홈페이지 </h1>
 <P><a href='#' id="client-list">고객정보 보기</a></P>
 <P><a href='#' id="client-insert">고객정보 입력</a></P>
+<P><a href='#' id="place-list">관광지정보 보기</a></P>
 <script>
 $(`#client-list`).click(function(){
    location.href=`move/client/list`})
@@ -17,6 +18,8 @@ $(`#client-list`).click(function(){
 <script>
 $(`#client-insert`).click(function(){
    location.href=`move/client/insert`})
+   $(`#place-list`).click(function(){
+	   location.href=`/demo/move/pce/listPlace`})
 </script>
 </body>
 </html>
