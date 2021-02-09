@@ -1,6 +1,7 @@
 var client = client || {}
 client.list = () => {
-	$.getJSON('/demo/client/list', function(d){
+	$.getJSON('/demo/client/list', 
+	function(d){
 	$.each(d.list,function(i, j){
 		console.log(j.cliNum)
 		$(`<tr>

@@ -50,7 +50,6 @@ public class ClientController {
 	        return map;
 	    }
 	    
-	    
 	    @DeleteMapping("/delete")
 		public Map<?,?> delete(@RequestBody Client c){
 			var map = new HashMap<>();

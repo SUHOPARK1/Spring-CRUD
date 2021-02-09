@@ -16,8 +16,8 @@
 			 from Client
 	</select>
 	
-	
-	<delete id="remove" parameterType="com.tplus.gwland.uss.service.Client" >
+	<!-- 고객삭제-->
+	<delete id="delete" parameterType="com.tplus.gwland.uss.service.Client" >
 		delete from Client
 		where cli_num like #{cliNum}
 	</delete>

@@ -45,16 +45,15 @@
 $('#delete-btn').click(function(e){
 	e.preventDefault()
     $.ajax({
-		url:'/demo/client/list',
+		url:'/demo/client/delete',
 		type:'DELETE',
 		data:JSON.stringify({
-			cliNum:localStorage.getItem('cliNum')
+			cliNum:localStorage.getItem('#cliNum')
 		}),
 		dataType:'json',
 		contentType:'application/json',
 		success:
 			function(d){
-			console.log(d)
 			if(d.message === "SUCCESS"){
 				alert("고객정보를 성공적으로 삭제하셨습니다.")
 			}else{
@@ -66,7 +65,6 @@ $('#delete-btn').click(function(e){
 			}
     	})
     })
-    	
 </script>
 </body>
 </html>
