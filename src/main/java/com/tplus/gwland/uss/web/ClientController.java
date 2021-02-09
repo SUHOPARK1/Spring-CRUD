@@ -51,7 +51,7 @@ public class ClientController {
 	    }
 	    
 	    
-	    @DeleteMapping("/remove")
+	    @DeleteMapping("/delete")
 		public Map<?,?> delete(@RequestBody Client c){
 			var map = new HashMap<>();
 			System.out.println("고객데이터 삭제");

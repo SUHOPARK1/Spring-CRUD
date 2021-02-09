@@ -19,9 +19,6 @@ public class ClientService  {
 	 public List<Client> list(){
 	  return mapper.list();
    }
-	public void remove(Client c) {
-		
-	}
 	public int delete(Client c) {
 		return mapper.delete(c);
 	}

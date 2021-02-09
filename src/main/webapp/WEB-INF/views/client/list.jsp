@@ -26,12 +26,13 @@
 <script>
 	client.list()
 </script>
- <tfoot>
+  <tfoot>
     <tr>
       <th></th>
       <td>
-        <a class="btn btn-info" href="/articles/edit/{{id}}">수정</a>
-        <button class="btn btn-danger" id="article-destroy-btn">삭제</button> <!-- 삭제 버튼 추가 -->
+        <button class="btn btn-danger" id="update-btn">고객데이터 수정</button>
+        
+        <button class="btn btn-danger" id="delete-btn">고객데이터 삭제</button>
       </td>
     </tr>
   </tfoot>
@@ -40,6 +41,33 @@
  <p>
 <input type="button" value="홈으로" onclick="history.back(-1)">
 </p>
+<script>
+$('#delete-btn').click(function(e){
+	e.preventDefault()
+    $.ajax({
+		url:'/demo/client/list',
+		type:'DELETE',
+		data:JSON.stringify({
+			cliNum:localStorage.getItem('cliNum')
+		}),
+		dataType:'json',
+		contentType:'application/json',
+		success:
+			function(d){
+			console.log(d)
+			if(d.message === "SUCCESS"){
+				alert("고객정보를 성공적으로 삭제하셨습니다.")
+			}else{
+				alert("고객정보 삭제를 실패하셨습니다.")
+			}
+		},
+		error:function(e){
+			alert("다시 입력해주세요.")
+			}
+    	})
+    })
+    	
+</script>
 </body>
 </html>
 
