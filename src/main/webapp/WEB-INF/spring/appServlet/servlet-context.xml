@@ -21,7 +21,20 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+<!--
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**/*">
+			<mvc:exclude-mapping path="/">
+			<mvc:exclude-mapping path="/auth/*">
+			<mvc:exclude-mapping path="/resource/**">
+			<bean class="com.tplus.gwland.sec.AuthInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>  
+-->
+	
 	<context:component-scan base-package="com.tplus.gwland" />
+	
 	
 	
 	
