@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,11 +54,18 @@ public class ClientController {
 	    @DeleteMapping("/delete")
 		public Map<?,?> delete(@RequestBody Client c){
 			var map = new HashMap<>();
-			System.out.println("고객데이터 삭제");
+			System.out.println("고객데이터 삭제"+c);
 			map.put("message", clientMapper.delete(c)==1 ? "SUCCESS" : "FAILURE");
 			return map;
 		}
 	    
+	    @PutMapping("")
+		public Map<?,?> update(@RequestBody Client c){
+			var map = new HashMap<>();
+			System.out.println("고객데이터 수정");
+			map.put("message", clientMapper.update(c)==1 ? "SUCCESS" : "FAILURE");
+			return map;
+		}
 	    
 
 }

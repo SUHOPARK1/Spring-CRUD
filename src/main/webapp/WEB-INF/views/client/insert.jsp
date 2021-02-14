@@ -51,9 +51,9 @@
  </tbody>
 </table>
 <p>
- <input type="submit" id="insert-btn" value="입력"/>
- <input type="button" value="취소" onclick="history.back(-1)">
- <input type="button" value="홈으로" onclick="history.back(-1)">
+ <input type="submit" id="insert-btn" value="등록"/>
+ <input type=button value="취소" onclick="location.reload()">
+ <input type="button" value="돌아가기" onclick="history.back(-1)">
 </p>
 
 </form>
@@ -78,6 +78,7 @@ $('#insert-btn').click(function(e){
 			console.log(d)
 			if(d.message === "SUCCESS"){
 				alert("고객정보를 성공적으로 등록하셨습니다.")
+				location.href=`list`
 			}else{
 				alert("고객정보입력를 실패하셨습니다.")
 			}
@@ -87,6 +88,11 @@ $('#insert-btn').click(function(e){
 		}
 	})
 })
+</script>
+
+<script>
+$(`#client-insert`).click(function(){
+   location.href=`move/client/insert`})
 </script>
 </body>
 </html>

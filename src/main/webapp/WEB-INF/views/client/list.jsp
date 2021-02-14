@@ -4,7 +4,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <head>
-<script src="/demo/resources/list.js"></script>
+<script src="/demo/resources/client.js"></script>
 <meta charset="UTF-8">
 
 </head>
@@ -21,60 +21,18 @@
    <th>생년월일</th>
   </tr>
  </thead>
-
 </table>
+
 <script>
 	client.list()
 </script>
-  <tfoot>
-    <tr>
-      <th></th>
-      <td>
-        <button class="btn btn-danger" id="update-btn">고객데이터 수정</button>
-        
-        <button class="btn btn-danger" id="delete-btn">고객데이터 삭제</button>
-      </td>
-    </tr>
-  </tfoot>
 
+  <h5 style="color:#CD5C5C">&nbsp;&nbsp;&nbsp;&nbsp;※고객아이디를 누르면 상세페이지로 넘어갑니다.</h5>
 
  <p>
-<input type="button" value="홈으로" onclick="history.back(-1)">
+<input type="button" value="돌아가기" onclick="history.back(-1)">
+<button type="button" onclick="location.href='http://localhost:8080/demo/' ">홈으로</button>
 </p>
-<script>
-$('#delete-btn').click(function(e){
-	e.preventDefault()
-    $.ajax({
-		url:'/demo/client/delete',
-		type:'DELETE',
-		data:JSON.stringify({
-			cliNum:localStorage.getItem('#cliNum')
-		}),
-		dataType:'json',
-		contentType:'application/json',
-		success:
-			function(d){
-			if(d.message === "SUCCESS"){
-				alert("고객정보를 성공적으로 삭제하셨습니다.")
-			}else{
-				alert("고객정보 삭제를 실패하셨습니다.")
-			}
-		},
-		error:function(e){
-			alert("다시 입력해주세요.")
-			}
-    	})
-    })
-</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

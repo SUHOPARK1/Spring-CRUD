@@ -15,5 +15,7 @@ public interface ClientMapper {
 	public List<Client> list();
 	
 	public int delete(Client c);
+
+	public int update(Client c);
 	
 }

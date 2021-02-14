@@ -22,4 +22,8 @@ public class ClientService  {
 	public int delete(Client c) {
 		return mapper.delete(c);
 	}
+	public int update(Client c) {
+		return mapper.update(c);
+	}
+	
 }
