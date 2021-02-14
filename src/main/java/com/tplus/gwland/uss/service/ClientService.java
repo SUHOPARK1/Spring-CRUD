@@ -15,6 +15,7 @@ import com.tplus.gwland.uss.service.ClientMapper;
 public class ClientService  {
 	 @Autowired ClientMapper mapper;
 	 public int list;
+	public int detail;
 	 
 	 public List<Client> list(){
 	  return mapper.list();
@@ -26,4 +27,7 @@ public class ClientService  {
 		return mapper.update(c);
 	}
 	
+	public List<Client> detail(){
+		  return mapper.detail();
+	   }
 }

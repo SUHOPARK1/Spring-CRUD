@@ -51,6 +51,15 @@ public class ClientController {
 	        return map;
 	    }
 	    
+	    @GetMapping("/detail")
+	    public Map<?, ?> detail(){
+	    	var map = new HashMap<>();
+	    	System.out.print("고객데이터 불러오기");
+	    	map.put("detail", clientService.detail());
+	    	map.put("message", (clientService.detail == 1) ? "SUCCESS":"FAILURE");
+	    	return map;
+	    }
+	    
 	    @DeleteMapping("/delete")
 		public Map<?,?> delete(@RequestBody Client c){
 			var map = new HashMap<>();
@@ -59,7 +68,7 @@ public class ClientController {
 			return map;
 		}
 	    
-	    @PutMapping("")
+	    @PutMapping("/update")
 		public Map<?,?> update(@RequestBody Client c){
 			var map = new HashMap<>();
 			System.out.println("고객데이터 수정");

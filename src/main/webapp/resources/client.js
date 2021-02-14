@@ -48,6 +48,51 @@ client.delete = x => {
 }
 
 
-client.detail = x => {
+client.detail = x=>{
+	$.getJSON(`localStorage.getItem('cliNum')`,d=>{
+		$(`<tr>
+		<td>${cliNum}</td>
+		<td>${cliId}</td>
+		<td>${name}</td>
+		<td>${gender}</td>
+		<td>${phoneNum}</td>
+		<td>${regDate}</td>
+		</tr>`).appendTo('#client-list')
+	})
+}
+
+clent.update = x => {
+	$('#update-btn').click(function(e){
+	e.preventDefault()
+	$.ajax({
+		url:'/demo/client/update',
+		type:'POST',
+		data:JSON.stringify({
+			cliId: $('#cliId').val(),
+			name: $('#name').val(),
+			gender: $('#gender').val(),
+			phoneNum: $('#phoneNum').val(),
+			regDate: $('#regDate').val()
+		}),
+		dataType:'json',
+		contentType:'application/json',
+		success: 
+			function(d){
+			console.log(d)
+			if(d.message === "SUCCESS"){
+				alert("고객정보를 성공적으로 등록하셨습니다.")
+				location.href=`detail`
+			}else{
+				alert("고객정보입력를 실패하셨습니다.")
+			}
+		},
+		error: function(e){
+			alert("다시 입력해주세요.")
+		}
+	})
+})
 	
 }
+
+
+
