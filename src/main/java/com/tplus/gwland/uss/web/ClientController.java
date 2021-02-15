@@ -37,7 +37,7 @@ public class ClientController {
 	    @PostMapping("/insert")
 	    public Map<?,?> insert(@RequestBody Client c){
 	    	var map = new HashMap<>();
-	    	System.out.println("고객데이터 입력");
+	    	logger.info("고객데이터 입력");
 	    	map.put("message", (clientMapper.insert(c) == 1) ? "SUCCESS":"FAILURE");
 	    	return map;
 	    }
@@ -45,7 +45,7 @@ public class ClientController {
 	    @GetMapping("/list")
 	    public Map<?, ?> list(){
 	    	var map = new HashMap<>();
-	    	System.out.println("고객데이터 불러오기");
+	    	logger.info("모든 고객데이터 불러오기");
 	    	map.put("list", clientService.list());
 	    	map.put("message", (clientService.list == 1) ? "SUCCESS":"FAILURE");
 	        return map;
@@ -54,7 +54,7 @@ public class ClientController {
 	    @GetMapping("/detail/{cliId}")
 	    public Map<?, ?> detail(@PathVariable String cliId){
 	    	var map = new HashMap<>();
-	    	System.out.println("고객상세데이터 불러오기"+cliId);
+	    	logger.info("불러오는 고객 아이디 : " + cliId);
 	    	map.put("detail", clientService.detail(cliId));
 	    	map.put("message", (clientService.detail(cliId) != null) ? "SUCCESS":"FAILURE");
 	    	return map;
@@ -63,7 +63,7 @@ public class ClientController {
 	    @DeleteMapping("/delete")
 		public Map<?,?> delete(@RequestBody Client c){
 			var map = new HashMap<>();
-			System.out.println("고객데이터 삭제"+c);
+			logger.info("고객데이터 삭제");
 			map.put("message", clientMapper.delete(c)==1 ? "SUCCESS" : "FAILURE");
 			return map;
 		}
@@ -71,8 +71,8 @@ public class ClientController {
 	    @PutMapping("/update")
 		public Map<?,?> update(@RequestBody Client c){
 			var map = new HashMap<>();
-			System.out.println("고객데이터 수정"+c);
-			System.out.println(clientMapper.update(c));
+			logger.info("수정된 고객 아이디: " + clientMapper.update(c));
+			logger.info("고객데이터 수정값 : " + c);
 			map.put("message", clientMapper.update(c)==1 ? "SUCCESS" : "FAILURE");
 			return map;
 		}
