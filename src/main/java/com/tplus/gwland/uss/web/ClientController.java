@@ -55,7 +55,6 @@ public class ClientController {
 	    public Map<?, ?> detail(@PathVariable String cliId){
 	    	var map = new HashMap<>();
 	    	System.out.println("고객상세데이터 불러오기"+cliId);
-	    	System.out.println(clientService.detail(cliId));
 	    	map.put("detail", clientService.detail(cliId));
 	    	map.put("message", (clientService.detail(cliId) != null) ? "SUCCESS":"FAILURE");
 	    	return map;
@@ -72,7 +71,8 @@ public class ClientController {
 	    @PutMapping("/update")
 		public Map<?,?> update(@RequestBody Client c){
 			var map = new HashMap<>();
-			System.out.println("고객데이터 수정");
+			System.out.println("고객데이터 수정"+c);
+			System.out.println(clientMapper.update(c));
 			map.put("message", clientMapper.update(c)==1 ? "SUCCESS" : "FAILURE");
 			return map;
 		}

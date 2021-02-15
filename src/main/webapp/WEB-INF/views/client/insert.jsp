@@ -90,9 +90,5 @@ $('#insert-btn').click(function(e){
 })
 </script>
 
-<script>
-$(`#client-insert`).click(function(){
-   location.href=`move/client/insert`})
-</script>
 </body>
 </html>

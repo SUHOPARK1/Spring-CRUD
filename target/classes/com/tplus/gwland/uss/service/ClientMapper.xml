@@ -30,10 +30,9 @@
 	
 	<!-- 고객데이터 수정 -->
 	<update id = "update" parameterType="com.tplus.gwland.uss.service.Client">
-		update Client set cli_id = #{cliId}, name = #{name}, gender = #{gender}, phone_num = #{phoneNum},
+		update Client set name = #{name}, gender = #{gender}, phone_num = #{phoneNum},
 						  reg_date = #{regDate}
 		where cli_num like #{cliNum} 
-	
 	</update>
 			
 	

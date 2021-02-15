@@ -5,11 +5,7 @@ import lombok.Data;
 @Data
 public class Client {
 	public int cliNum; 
-	public String cliId;
-	public String name;
-	public String gender;
-	public int phoneNum;
-	public int regDate;
+	public String cliId, name, gender, phoneNum, regDate;
 }
 
 /* create table Client(
@@ -17,8 +13,8 @@ public class Client {
 	cli_id varchar(20),
 	name varchar(10),
 	gender varchar(10),
-	phone_num varchar(20),
-	reg_date varchar(20));
+	phone_num int(20),
+	reg_date int(20));
 	*/
 
 /* 

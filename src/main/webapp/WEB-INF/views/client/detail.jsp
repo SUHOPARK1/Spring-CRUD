@@ -28,6 +28,7 @@
 </script>
 
 <input type="button" value="돌아가기" onclick="history.back(-1)">
+<button type="button" onclick="location.href='http://localhost:8080/demo/' ">홈으로</button>
 <button id='update-btn'> 회원정보 수정</button>
 <button id='delete-btn'> 회원정보 삭제</button>
 

@@ -67,9 +67,10 @@ client.update = x => {
 	e.preventDefault()
 	$.ajax({
 		url:'/demo/client/update',
-		type:'POST',
+		type:'PUT',
 		data:JSON.stringify({
-			cliId: $('#cliId').val(),
+			cliNum: $('#cliNum').text(),
+			cliId: $('#cliId').text(),
 			name: $('#name').val(),
 			gender: $('#gender').val(),
 			phoneNum: $('#phoneNum').val(),
@@ -82,7 +83,7 @@ client.update = x => {
 			console.log(d)
 			if(d.message === "SUCCESS"){
 				alert("고객정보를 성공적으로 등록하셨습니다.")
-				location.href=`detail`
+				location.href=`list`
 			}else{
 				alert("고객정보입력를 실패하셨습니다.")
 			}

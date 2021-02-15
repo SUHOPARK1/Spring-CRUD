@@ -18,15 +18,23 @@
  </colgroup>
 
  <tbody>
- 
   <tr>
    <th>고객번호</th>
+   <td>
+    <span id= "cliNum"></span>
+   </td>
   </tr>
-  <tr>
+   <tr>
    <th>고객아이디</th>
+   <td>
+    <span id = "cliId"></span>
+   </td>
   </tr>
   <tr>
    <th>고객이름</th>
+   <td>
+    <input type ="text" id="name" name="name" maxlength=50 value=""/>
+   </td>
   </tr>
   <tr>
    <th>성별(M/F)</th>
@@ -53,11 +61,22 @@
  <input type=button value="취소" onclick="location.reload()">
  <input type="submit" id="update-btn" value="수정하기"/>
 </p>
-
 </form>
 
 <script>
+	client.update()
+</script>
+<script>
+	$('#cliNum').text(localStorage.getItem('cliNum'))
+	$('#cliId').text(localStorage.getItem('cliId'))
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
