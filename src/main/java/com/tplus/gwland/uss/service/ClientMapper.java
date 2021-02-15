@@ -18,6 +18,6 @@ public interface ClientMapper {
 
 	public int update(Client c);
 
-	public List<Client> detail();
+	public Client detail(String cliId);
 	
 }

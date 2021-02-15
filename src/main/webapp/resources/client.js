@@ -15,10 +15,11 @@ client.list = x => {
 	$('#client-list tr td a').each(function(){
 		$(this).click(function(){
 		localStorage.setItem('cliNum',this.id)
+		localStorage.setItem('cliId',this.innerText)
 		location.href=`/demo/move/client/detail`
 		})
 	})
-})
+	})
 } 
 client.delete = x => { 
 	$('#delete-btn').click(function(e){
@@ -49,19 +50,19 @@ client.delete = x => {
 
 
 client.detail = x=>{
-	$.getJSON(`localStorage.getItem('cliNum')`,d=>{
+	$.getJSON(`/demo/client/detail/${localStorage.getItem('cliId')}`,d=>{
 		$(`<tr>
-		<td>${cliNum}</td>
-		<td>${cliId}</td>
-		<td>${name}</td>
-		<td>${gender}</td>
-		<td>${phoneNum}</td>
-		<td>${regDate}</td>
-		</tr>`).appendTo('#client-list')
+		<td>${d.detail.cliNum}</td>
+		<td>${d.detail.cliId}</td>
+		<td>${d.detail.name}</td>
+		<td>${d.detail.gender}</td>
+		<td>${d.detail.phoneNum}</td>
+		<td>${d.detail.regDate}</td>
+		</tr>`).appendTo('#client-detail')
 	})
 }
 
-clent.update = x => {
+client.update = x => {
 	$('#update-btn').click(function(e){
 	e.preventDefault()
 	$.ajax({

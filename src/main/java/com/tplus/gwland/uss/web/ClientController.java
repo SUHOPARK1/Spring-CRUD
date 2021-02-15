@@ -45,18 +45,19 @@ public class ClientController {
 	    @GetMapping("/list")
 	    public Map<?, ?> list(){
 	    	var map = new HashMap<>();
-	    	System.out.print("고객데이터 불러오기");
+	    	System.out.println("고객데이터 불러오기");
 	    	map.put("list", clientService.list());
 	    	map.put("message", (clientService.list == 1) ? "SUCCESS":"FAILURE");
 	        return map;
 	    }
 	    
-	    @GetMapping("/detail")
-	    public Map<?, ?> detail(){
+	    @GetMapping("/detail/{cliId}")
+	    public Map<?, ?> detail(@PathVariable String cliId){
 	    	var map = new HashMap<>();
-	    	System.out.print("고객데이터 불러오기");
-	    	map.put("detail", clientService.detail());
-	    	map.put("message", (clientService.detail == 1) ? "SUCCESS":"FAILURE");
+	    	System.out.println("고객상세데이터 불러오기"+cliId);
+	    	System.out.println(clientService.detail(cliId));
+	    	map.put("detail", clientService.detail(cliId));
+	    	map.put("message", (clientService.detail(cliId) != null) ? "SUCCESS":"FAILURE");
 	    	return map;
 	    }
 	    
